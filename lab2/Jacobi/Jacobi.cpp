@@ -1,6 +1,7 @@
 ﻿#include<iostream>
 #include<string>
 #include<sstream>
+#include<omp.h>
 using namespace std;
 double** input_matr(int N, int M) {
     double** matr = new double* [N];
@@ -29,7 +30,7 @@ void print_matr(double** matr, int N, int M) {
     }
 }
 
-void Jacobi(int N, double** A, double* F, double* X)
+double* Jacobi(int N, double** A, double* F, double* X)
 {
     double* TempX = new double[N];
     double norm;
@@ -50,11 +51,63 @@ void Jacobi(int N, double** A, double* F, double* X)
             X[h] = TempX[h];
         }
     } while (norm > eps);
-    for (int i = 0; i < N; i++) {
-        cout << X[i] << " ";
-    }
-    delete[] TempX;
+    return X;
 }
+
+double* Jacobi_parallel(int N, double** A, double* F, double* X,int n_threads)
+{
+    double* TempX = new double[N];
+    double norm;
+    double eps = 0.0001;
+    do {
+        #pragma omp parallel for num_threads(n_threads) 
+        for (int i = 0; i < N; i++) {
+            TempX[i] = F[i];
+            for (int g = 0; g < N; g++) {
+                if (i != g)
+                    TempX[i] -= A[i][g] * X[g];
+            }
+            TempX[i] /= A[i][i];
+        }
+        norm = fabs(X[0] - TempX[0]);
+        #pragma omp parallel for num_threads(n_threads)
+        for (int h = 0; h < N; h++) {
+            if (fabs(X[h] - TempX[h]) > norm)
+                norm = fabs(X[h] - TempX[h]);
+            X[h] = TempX[h];
+        }
+    } while (norm > eps);
+    return X;
+}
+
+double* Jacobi_parallel_2(int N, double** A, double* F, double* X, int n_threads)
+{
+    double* TempX = new double[N];
+    double norm;
+    double eps = 0.0001;
+    do {
+        #pragma omp parallel for collapse(2) num_threads(n_threads) 
+        for (int i = 0; i < N; i++) {
+            TempX[i] = F[i];
+            for (int g = 0; g < N; g++) {
+                if (i != g)
+                    TempX[i] -= A[i][g] * X[g];
+            }
+            TempX[i] /= A[i][i];
+        }
+        norm = fabs(X[0] - TempX[0]);
+        #pragma omp parallel for num_threads(n_threads)
+        for (int h = 0; h < N; h++) {
+            if (fabs(X[h] - TempX[h]) > norm)
+                norm = fabs(X[h] - TempX[h]);
+            X[h] = TempX[h];
+        }
+    } while (norm > eps);
+    return X;
+}
+
+
+
 
 int main()
 {
@@ -71,8 +124,17 @@ int main()
     for (int i = 0; i < N1; i++) {
         F[i] = matr1[i][N1];
     }
-    Jacobi(N1,matr1, F,start);
     
-
-
+    double*result=Jacobi(N1,matr1, F,start);
+    for (int i = 0; i < N1; i++) {
+        cout << result[i] << " ";
+    }
+    result = Jacobi_parallel(N1, matr1, F, start,2);
+    for (int i = 0; i < N1; i++) {
+        cout << result[i] << " ";
+    }
+    result = Jacobi_parallel_2(N1, matr1, F, start, 2);
+    for (int i = 0; i < N1; i++) {
+        cout << result[i] << " ";
+    }
 }
