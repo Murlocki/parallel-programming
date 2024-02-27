@@ -1,0 +1,1 @@
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab1\Parallel_comp\x64\Debug\Parallel_comp.exe

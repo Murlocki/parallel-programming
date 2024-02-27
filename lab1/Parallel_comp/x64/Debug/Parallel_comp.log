@@ -1,0 +1,4 @@
+﻿  Parallel_comp.cpp
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab1\Parallel_comp\Parallel_comp.cpp(65,9): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab1\Parallel_comp\Parallel_comp.cpp(89,9): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
+  Parallel_comp.vcxproj -> C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab1\Parallel_comp\x64\Debug\Parallel_comp.exe
