@@ -30,9 +30,13 @@ void print_matr(double** matr, int N, int M) {
     }
 }
 
-double* Jacobi(int N, double** A, double* F, double* X)
+double* Jacobi(int N, double** A, double* F, double* G)
 {
     double* TempX = new double[N];
+    double* X = new double[N];
+    for (int i = 0; i < N; i++) {
+        X[i] = G[i];
+    }
     double norm;
     double eps = 0.0001;
     do {
@@ -54,9 +58,13 @@ double* Jacobi(int N, double** A, double* F, double* X)
     return X;
 }
 
-double* Jacobi_parallel(int N, double** A, double* F, double* X,int n_threads)
+double* Jacobi_parallel(int N, double** A, double* F, double* G,int n_threads)
 {
     double* TempX = new double[N];
+    double* X = new double[N];
+    for (int i = 0; i < N; i++) {
+        X[i] = G[i];
+    }
     double norm;
     double eps = 0.0001;
     do {
@@ -80,9 +88,13 @@ double* Jacobi_parallel(int N, double** A, double* F, double* X,int n_threads)
     return X;
 }
 
-double* Jacobi_parallel_2(int N, double** A, double* F, double* X, int n_threads)
+double* Jacobi_parallel_2(int N, double** A, double* F, double* G, int n_threads)
 {
     double* TempX = new double[N];
+    double* X = new double[N];
+    for (int i = 0; i < N; i++) {
+        X[i] = G[i];
+    }
     double norm;
     double eps = 0.0001;
     do {
@@ -124,17 +136,47 @@ int main()
     for (int i = 0; i < N1; i++) {
         F[i] = matr1[i][N1];
     }
-    
+    double start_time = clock();
     double*result=Jacobi(N1,matr1, F,start);
     for (int i = 0; i < N1; i++) {
         cout << result[i] << " ";
     }
+    double end_time = clock();
+    cout << end_time - start_time << endl;
+
+    start_time = clock();
     result = Jacobi_parallel(N1, matr1, F, start,2);
+    end_time = clock();
+    cout << end_time - start_time << endl;
     for (int i = 0; i < N1; i++) {
         cout << result[i] << " ";
     }
+    cout << endl;
+    start_time = clock();
+    result = Jacobi_parallel(N1, matr1, F, start, 3);
+    end_time = clock();
+    cout << end_time - start_time << endl;
+    start_time = clock();
+    result = Jacobi_parallel(N1, matr1, F, start, 4);
+    end_time = clock();
+    cout << end_time - start_time << endl;
+
+    start_time = clock();
     result = Jacobi_parallel_2(N1, matr1, F, start, 2);
+    end_time = clock();
+    cout << end_time - start_time << endl;
+    start_time = clock();
+    result = Jacobi_parallel_2(N1, matr1, F, start, 3);
+    end_time = clock();
+    cout << end_time - start_time << endl;
+    start_time = clock();
+    result = Jacobi_parallel_2(N1, matr1, F, start, 4);
+    end_time = clock();
+    cout << end_time - start_time << endl;
     for (int i = 0; i < N1; i++) {
         cout << result[i] << " ";
     }
+    cout << endl;
 }
+
+
