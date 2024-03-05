@@ -1,0 +1,3 @@
+﻿  Jacobi.cpp
+C:\Users\kiril\Documents\Parallel\parallel-programming\lab3\Jacobi\Jacobi.cpp(13,34): warning C4244: инициализация: преобразование "double" в "unsigned int", возможна потеря данных
+  Jacobi.vcxproj -> C:\Users\kiril\Documents\Parallel\parallel-programming\lab3\Jacobi\Debug\Jacobi.exe
