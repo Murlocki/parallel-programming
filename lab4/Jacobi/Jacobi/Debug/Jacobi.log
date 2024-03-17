@@ -1,0 +1,12 @@
+﻿cl : командная строка  warning D9025: переопределение "/openmp" на "/openmp:llvm"
+  Jacobi.cpp
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(75,24): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(102,29): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(121,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(147,11): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(205,12): warning C4101: a: неиспользованная локальная переменная
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(205,14): warning C4101: b: неиспользованная локальная переменная
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(206,9): warning C4101: N: неиспользованная локальная переменная
+LINK : warning LNK4044: нераспознанный параметр "/openmp:llvm"; игнорируется
+LINK : warning LNK4044: нераспознанный параметр "/openmp:experimental"; игнорируется
+  Jacobi.vcxproj -> C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Debug\Jacobi.exe

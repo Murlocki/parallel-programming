@@ -1,0 +1,8 @@
+﻿cl : командная строка warning D9025: переопределение "/openmp" на "/openmp:llvm"
+  Jacobi.cpp
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(75,24): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(98,17): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(102,29): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(121,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(137,13): error C7660: "task": требуются параметры командной строки "-openmp:llvm -openmp:experimental".
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab4\Jacobi\Jacobi.cpp(143,13): error C7660: "task": требуются параметры командной строки "-openmp:llvm -openmp:experimental".
