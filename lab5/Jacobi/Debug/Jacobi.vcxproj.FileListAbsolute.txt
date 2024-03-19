@@ -1,0 +1,6 @@
+C:\Users\kiril\Documents\Parallel\parallel-programming\lab2\Jacobi\Debug\Jacobi.exe
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab2\Jacobi\Debug\Jacobi.exe
+C:\Users\kiril\Documents\Parallel\parallel-programming\lab3\Jacobi\Debug\Jacobi.exe
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab3\Jacobi\Debug\Jacobi.exe
+C:\Users\kiril\Documents\Parallel\parallel-programming\lab3 — копия\Jacobi\Debug\Jacobi.exe
+C:\Users\kiril\Documents\Parallel\parallel-programming\lab5\Jacobi\Debug\Jacobi.exe
