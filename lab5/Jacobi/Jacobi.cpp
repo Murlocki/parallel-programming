@@ -104,7 +104,7 @@ int main()
     //cin >> N;
     //cout << "Введите матрицу смежности" << endl;
     //double** matr_sm = input_matr(N, N);
-    for (int N = 100; N <= 1000; N = N + 50) {
+    for (int N = 100; N <= 2000; N = N + 50) {
         double** matr_sm = rand_matr(N);
         //print_matr(matr_sm, N, N);
 

@@ -1,3 +1,3 @@
 ﻿  Jacobi.cpp
-C:\Users\kiril\Documents\Parallel\parallel-programming\lab5\Jacobi\Jacobi.cpp(85,9): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
-  Jacobi.vcxproj -> C:\Users\kiril\Documents\Parallel\parallel-programming\lab5\Jacobi\Debug\Jacobi.exe
+C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab5\Jacobi\Jacobi.cpp(85,9): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "parallel for".
+  Jacobi.vcxproj -> C:\Users\kiril\Desktop\Параллельные вычисления\parallel-programming\lab5\Jacobi\Debug\Jacobi.exe
